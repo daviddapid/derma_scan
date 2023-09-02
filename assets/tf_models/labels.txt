@@ -1,0 +1,13 @@
+0 bisul
+1 cacar_air
+2 hermangioma
+3 herpes
+4 impetigo
+5 jerawat
+6 kurap
+7 kutil
+8 melanoma
+9 melasma
+10 psoriasis
+11 rosacea
+12 strechmark
