@@ -14,7 +14,7 @@ class ImageController extends GetxController {
   void onInit() async {
     super.onInit();
     var response = await Tflite.loadModel(
-      model: 'assets/tf_models/model_unquant.tflite',
+      model: 'assets/tf_models/model1.tflite',
       labels: 'assets/tf_models/labels.txt',
       isAsset: true,
       numThreads: 1,
@@ -35,9 +35,12 @@ class ImageController extends GetxController {
       _predictions?.value = predictions;
     }
     print(_predictions);
+    print(getCountPredictions());
   }
 
   List? getAllPredictions() => _predictions?.value;
+  int getCountPredictions() => getAllPredictions()?.length ?? 0;
+  dynamic getPrediction({required index}) => _predictions!.value[index];
 
   // image picker & cropper function
   bool imgIsExist() => _imgPath != "" ? true : false;
@@ -86,7 +89,7 @@ class ImageController extends GetxController {
       ],
     );
     if (croppedFile != null) {
-      _imgPath.value = imgPath;
+      _imgPath.value = croppedFile.path;
     } else {
       Get.snackbar("Error", "crop img");
     }

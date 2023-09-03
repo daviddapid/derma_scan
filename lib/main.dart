@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:card_swiper/card_swiper.dart';
-import 'package:derma_scan/detail.dart';
+import 'package:derma_scan/components/card_prediction.dart';
 import 'package:derma_scan/image_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -105,72 +105,21 @@ class MyHomePage extends StatelessWidget {
               SizedBox(height: 30),
 
               Container(
-                decoration: BoxDecoration(border: Border.all(width: 1, color: Colors.red)),
+                // decoration: BoxDecoration(border: Border.all(width: 1, color: Colors.red)),
                 width: double.infinity,
                 height: 339,
-                child: Swiper(
-                  itemBuilder: (BuildContext context, int index) {
-                    return Card(
-                      clipBehavior: Clip.antiAliasWithSaveLayer,
-                      elevation: 1.5,
-                      child: Column(
-                        children: [
-                          Image.network(
-                            'https://images.unsplash.com/photo-1692721430986-6d71f39afe48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60',
-                            height: 110,
-                            width: double.infinity,
-                            fit: BoxFit.cover,
-                          ),
-                          Expanded(
-                            child: Container(
-                              decoration: BoxDecoration(border: Border.all(width: 1, color: Colors.red)),
-                              alignment: Alignment.topLeft,
-                              padding: EdgeInsets.symmetric(vertical: 10, horizontal: 6),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    'Title',
-                                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19),
-                                  ),
-                                  SizedBox(height: 10),
-                                  Text(
-                                      'lorem ipsum dolor sit amet lorem ipsum mdolor sit amet lorem ipsum dolor sit amet '),
-                                  Expanded(
-                                    child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.end,
-                                      crossAxisAlignment: CrossAxisAlignment.end,
-                                      children: [
-                                        // TextButton(onPressed: () {}, child: Text('lihat browser')),
-                                        // TextButton(onPressed: () {}, child: Text('lihat detail'))
-                                        TextButton.icon(
-                                          onPressed: () {},
-                                          label: Text('lihat browser'),
-                                          icon: Icon(Icons.search, size: 15),
-                                        ),
-                                        TextButton.icon(
-                                          // onPressed: () => Get.to(() => Detail(tagHero: 'tag-$index')),
-                                          onPressed: () => Get.to(() => Detail(), transition: Transition.fadeIn),
-                                          label: Text('lihat detail'),
-                                          icon: Icon(
-                                            Icons.remove_red_eye,
-                                            size: 15,
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                  )
-                                ],
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
-                    );
-                  },
-                  itemCount: 10,
-                  viewportFraction: 0.8,
-                  scale: 0.9,
+                child: Obx(
+                  () => Swiper(
+                    itemBuilder: (BuildContext context, int index) {
+                      return CardPrediction(
+                        prediction: _imageController.getPrediction(index: index),
+                      );
+                    },
+                    itemCount: _imageController.getCountPredictions(),
+                    viewportFraction: 0.8,
+                    scale: 0.9,
+                    loop: false,
+                  ),
                 ),
               )
             ],
