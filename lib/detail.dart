@@ -28,15 +28,29 @@ class Detail extends StatelessWidget {
             height: 200,
             fit: BoxFit.cover,
           ),
+          Container(
+            alignment: Alignment.center,
+            width: double.infinity,
+            decoration: BoxDecoration(color: Colors.lightBlue),
+            child: Text(
+              _disease.getLabel(),
+              style: TextStyle(
+                fontSize: 25,
+                fontWeight: FontWeight.w500,
+                color: Colors.white,
+              ),
+            ),
+          ),
           Expanded(
             child: Container(
               width: double.infinity,
-              padding: EdgeInsets.symmetric(vertical: 25, horizontal: 15),
-              decoration: BoxDecoration(border: Border.all(color: Colors.red, width: 2)),
+              padding: EdgeInsets.symmetric(horizontal: 15),
+              // decoration: BoxDecoration(border: Border.all(color: Colors.red, width: 2)),
               child: SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    SizedBox(height: 15),
                     Text(
                       'Ringkasan',
                       style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
@@ -52,6 +66,15 @@ class Detail extends StatelessWidget {
                     ),
                     Text(
                       _disease.getSymptom(),
+                      textAlign: TextAlign.justify,
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      'Pengobatan',
+                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                    ),
+                    Text(
+                      _disease.getTreatment(),
                       textAlign: TextAlign.justify,
                     ),
                     SizedBox(height: 10),

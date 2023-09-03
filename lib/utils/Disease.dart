@@ -3,6 +3,7 @@ class Disease {
   late String _description;
   late String _imagePath;
   late String _symptom;
+  late String _treatment;
   final Map<String, String> _descriptionList = {
     'bisul':
         'Kantong sempit berisi nanah yang berkumpul di jaringan, organ, atau ruang di dalam tubuh. Ketika suatu daerah dalam menjadi terinfeksi, sistem kekebalan tubuh mengirimkan sel darah putih untuk melawan infeksi. Sel-sel ini menyatuk dan bergabung dengan jaringan yang rusak dan kuman, menghasilkan cairan yang disebut nanah. Abses ditandai dengan benjolan nyeri yang penuh dengan nanah. Penanganan berupa pengeringan abses, dan pemberian antibiotik.',
@@ -120,7 +121,6 @@ Beberapa gejala umum lainnya yang dapat terlihat, antara lain:
 \u2022 Tonjolan di kulit dari ukuran kecil sampai besar.
 \u2022 Warna tonjolan dapat bervariasi dari warna kulit, putih, merah muda, maupun kecoklatan.
 \u2022 Tonjolan umumnya terasa kasar.
-
 ''',
     'melanoma': '''
 Kondisi penyakit ini dapat berkembang di mana saja di tubuh. Kondisi ini paling sering muncul di area yang pernah terpapar sinar matahari, seperti punggung, kaki, lengan, dan wajah.
@@ -164,24 +164,195 @@ Beberapa variasi gambaran kelainan yang bisa tampak pada striae adalah:
 \u2022 Garis pada kulit perut, payudara, pinggul, bokong, dan paha
 ''',
   };
+  final Map<String, String> _treatmentList = {
+    'bisul': '''
+Ketimbang memencet atau mengorek bisul, yang dapat menyebabkan infeksi, kamu bisa mengobati bisul supaya cepat mengempis dengan beberapa tahapan berikut ini: 
+
+\u2022 Gunakan kain bersih dan hangat untuk mengompres bisul. Kamu dapat mengulanginya pengompresan beberapa kali sehari untuk mendorong bisul keluar dan mengering.
+\u2022 Jaga kebersihan area sekitar bisul, cuci tangan setelah menyentuh area yang terkena.
+\u2022 Jika bisul terasa nyeri, minum obat pereda nyeri yang dijual bebas, seperti ibuprofen atau acetaminophen.
+\u2022 Saat terbuka, bisul bisa mengeluarkan cairan. Setelah bisul terbuka, tutupi untuk mencegah infeksi pada luka terbuka. Gunakan kasa atau bantalan penyerap untuk mencegah penyebaran nanah. Ganti kain kasa atau pembalut sesering mungkin.
+''',
+    'cacar_air': '''
+Hingga kini belum ditemukan langkah pengobatan yang efektif untuk mengatasi cacar air. Sejauh ini pengobatan dilakukan untuk meredakan gejala yang dialami oleh pengidap. Dokter biasanya meresepkan obat penurun panas untuk meredakan demam atau obat-obatan antihistamine untuk meredakan rasa gatal pada kulit.
+
+Selain itu, berikut ini beberapa langkah perawatan rumahan yang dapat menunjang proses pengobatan cacar air rumahan:
+
+\u2022 Konsumsi banyak cairan. Jika anak kurang suka air putih, ibu bisa memberikan jus atau es krim untuk mencegah dehidrasi.
+\u2022 Pakaikan celana panjang, kaos tangan panjang, dan kaos kaki untuk mencegah anak menggaruk kulit.
+\u2022 Memotong kuku anak agar tidak melukai lepuhan ruam.
+\u2022 Menggunakan krim atau gel pendingin dari apotek.
+\u2022 Mandi dengan air dingin untuk meredakan gatal.
+\u2022 Menggunakan pakaian longgar dengan bahan yang lembut.
+''',
+    'hemangioma': '''
+Sebagian besar hemangioma tidak perlu diobati, terutama bila tidak menimbulkan keluhan selain munculnya benjolan. Hal ini karena hemangioma akan hilang dengan sendirinya seiring pertumbuhan bayi.
+
+Jika hemangioma menimbulkan gangguan, seperti gangguan penglihatan atau gangguan pernapasan, dan menimbulkan luka, dokter dapat memberikan sejumlah obat berikut:
+
+\u2022 Penghambat beta
+Untuk hemangioma yang parah, dokter akan meresepkan obat penghambat beta dalam bentuk minum, seperti propanolol.
+\u2022 Kortikosteroid
+Kortikosteroid, seperti triamcinolone, digunakan oleh pasien yang tidak merespons obat penghambat beta. Obat ini dapat diberikan dalam bentuk tablet, oles, atau suntikan langsung ke hemangioma.
+\u2022 Vincristine
+Dokter hanya memberikan obat vincristine jika hemangioma menyebabkan gangguan pada penglihatan atau pernapasan bayi. Obat ini diberikan melalui suntikan setiap bulan.
+Selain dengan obat-obatan, hemangioma dapat ditangani dengan terapi laser. Namun, metode ini hanya digunakan jika ukuran hemangioma cukup besar dan menyebabkan nyeri.
+''',
+    'herpes': '''
+Pada umumnya, luka dan lepuh akibat herpes dapat sembuh dengan sendirinya dalam waktu 2–4 minggu. Hanya saja, virus mungkin tetap ada di dalam tubuh penderita tanpa menimbulkan gejala.
+
+Hingga kini, belum ada metode pengobatan yang dapat menghilangkan virus herpes dari dalam tubuh. Fokus pengobatan dengan obat herpes adalah untuk membantu meredakan keluhan, mencegah penularan herpes, dan menurunkan risiko terjadinya komplikasi.
+
+Beberapa obat-obatan antivirus dapat digunakan untuk mengatasi infeksi virus herpes adalah:
+
+\u2022 Acyclovir
+\u2022 Valacyclovir
+\u2022 Famciclovir
+\u2022 Penciclovir
+Selain mengonsumsi obat antivirus, Anda juga dapat mengonsumsi obat herpes alami maupun beberapa upaya yang bisa meredakan keluhan dan mempercepat pemulihan akibat infeksi virus herpes yaitu:
+
+\u2022 Mengonsumsi paracetamol atau ibuprofen untuk meredakan nyeri
+\u2022 Mengompres ruam kulit dengan air hangat atau atau air dingin
+\u2022 Menggunakan air suam kuku untuk mandi
+\u2022 Menggunakan pakaian longgar
+\u2022 Menggunakan pakaian dalam berbahan katun
+\u2022 Menjaga area luka tetap kering dan bersih
+''',
+    'jerawat': '''
+Beberapa upaya yang dapat kamu lakukan untuk mengatasi jerawat, antara lain:
+
+\u2002 Membersihkan peralatan kosmetik dengan menggunakan sabun dan air hangat secara rutin.
+\u2002 Memilih kosmetik non-comedogenic, yang sifatnya tidak menutup pori-pori di kulit.
+\u2002 Menggunakan pelembap non-comedogenic, yang tidak dapat menyebabkan jerawat dan sesuai dengan jenis kulit.
+\u2002 Menghindari memencet dan memegang jerawat, karena dapat membuatnya bertambah banyak.
+\u2002 Menghindari menggosok wajah dengan menggunakan kain atau sarung tangan dengan permukaan kasar.
+\u2002 Menjaga kebersihan tubuh dengan segera mandi setelah beraktivitas, karena minyak berlebih di wajah dapat memicu terjadi jerawat.
+\u2002 Menjaga kebersihan wajah dengan membersihkan wajah dua kali dalam sehari, untuk mengangkat sel-sel kulit mati, minyak yang berlebihan, serta sisa kosmetik di permukaan kulit.
+''',
+    'kurap': '''
+1. Pengobatan Kurap oleh Dokter
+Pada kasus yang ringan, dokter akan memberikan obat kurap atau antijamur dalam bentuk krim atau salep. Beberapa jenis obat yang bisa diberikan adalah:
+
+\u2022 Clotrimazole
+\u2022 Terbinafine
+\u2022 Miconazole
+\u2022 Naftifine
+\u2022 Ketoconazole
+Jika infeksi jamur terjadi pada area yang lebih luas, bertambah parah, atau sulit hilang, dokter akan memberikan obat antijamur dalam bentuk tablet, seperti:
+
+\u2022 Terbinafine
+\u2022 Itraconazole
+\u2022 Griseofulvin
+\u2022 Fluconazole
+
+2. Perawatan Kurap Secara Mandiri
+Selain dengan mengoleskan obat antijamur, pasien dapat melakukan beberapa hal beberapa hal di bawah ini untuk membantu menghilangkan kurap:
+
+\u2022 Tidak mengenakan pakaian dengan bahan yang dapat menimbulkan iritasi pada area kurap
+\u2022 Mencuci baju dan seprai setiap hari selama kurap belum sembuh
+\u2022 Menjaga kebersihan lingkungan sekitar
+\u2022 Membersihkan dan mengeringkan kulit secara teratur, terutama pada area kulit yang terkena kurap
+\u2022 Membawa hewan peliharaan ke dokter jika terkena kurap
+\u2022 Tidak menggaruk area yang terasa gatal
+Berkonsultasi dengan dokter kulit bila dalam 2 minggu kondisi tidak membaik
+
+''',
+    'kutil': '''
+Sebagian besar kutil dapat hilang dengan sendirinya tanpa pengobatan. Namun, kutil yang tidak diobati memerlukan waktu beberapa bulan atau beberapa tahun untuk sembuh. Oleh karena itu, pasien dianjurkan untuk menjalani pengobatan sesuai rekomendasi dokter.
+
+Beberapa metode pengobatan yang dapat disarankan oleh dokter adalah:
+
+\u2022 Obat oles
+Pemberian obat kutil yang dioles bertujuan untuk menghilangkan lapisan kutil sedikit demi sedikit. Jenis obat oles yang dapat diresepkan dokter antara lain asam salisilat dan asam trikloroasetat.
+
+\u2022 Krioterapi
+Krioterapi dilakukan dengan membekukan kutil menggunakan nitrogen cair. Setelah kutil membeku, lepuhan akan terbentuk dan kutil dapat terkelupas.
+
+\u2022 Terapi laser
+Terapi ini dilakukan dengan memanaskan dan menghancurkan pembuluh darah kecil di dalam kutil dengan menggunakan sinar laser agar kutil mudah terkelupas.
+''',
+    'melanoma': '''
+Melanoma adalah jenis kanker kulit yang berasal dari sel melanosit, yang bertanggung jawab untuk produksi pigmen melanin. Pengobatan melanoma tergantung pada sejauh mana kanker telah menyebar (stadium), lokasi kanker, dan faktor-faktor individu lainnya. Beberapa opsi pengobatan yang dapat dipertimbangkan oleh seorang individu dengan melanoma adalah sebagai berikut:
+
+\u2022 Pembedahan: Tindakan pembedahan adalah metode utama untuk menghilangkan melanoma yang terlokalisasi pada kulit. Ini bisa berupa eksisi sederhana atau eksisi dengan biopsi penyebaran ganda (sentinel lymph node biopsy) untuk memeriksa apakah kanker telah menyebar ke kelenjar getah bening terdekat.
+
+\u2022 Imunoterapi: Imunoterapi adalah jenis pengobatan yang merangsang sistem kekebalan tubuh untuk melawan kanker. Obat-obatan seperti pemblokir checkpoint imun seperti pembrolizumab atau nivolumab dapat digunakan untuk melanoma yang lebih lanjut.
+
+\u2022 Terapi Targeted: Terapi yang diarahkan pada target khusus dapat digunakan jika melanoma memiliki mutasi genetik tertentu. Contohnya adalah obat-obatan seperti dabrafenib dan trametinib yang digunakan untuk melanoma dengan mutasi BRAF.
+
+\u2022 Kemoterapi: Meskipun kemoterapi kurang umum digunakan untuk melanoma daripada jenis kanker lain, itu masih bisa menjadi opsi dalam beberapa kasus.
+
+\u2022 Terapi Radiasi: Terapi radiasi menggunakan sinar X atau partikel lain untuk merusak sel kanker. Ini dapat digunakan sebagai bagian dari pengobatan jika melanoma telah menyebar ke area tertentu.
+
+\u2022 Klinis Percobaan: Terkadang, orang dengan melanoma yang sulit diobati dapat mempertimbangkan untuk berpartisipasi dalam uji klinis yang mengevaluasi terapi eksperimental yang mungkin lebih efektif.
+
+
+''',
+    'melasma': '''
+Pada wanita, melasma sering memudar dengan sendirinya setelah kehamilan atau setelah seorang wanita berhenti mengonsumsi pil KB. Krim pencerah kulit dapat membantu melasma yang tidak sembuh-sembuh.
+''',
+    'psoriasis': '''
+Pengobatan psoriasis tergantung pada tingkat keparahan psoriasis dan efektivitas perawatan sebelumnya. Metode pengobatan yang bisa dilakukan untuk mengatasi psoriasis antara lain:
+
+1. Emolien
+Emolien merupakan pelembab yang dapat digunakan untuk mengobati psoriasis ringan. Manfaat emolien untuk psoriasis antara lain untuk mengurangi pengelupasan kulit dan iritasi, meredakan gatal, dan mencegah perdarahan akibat goresan pada kulit.
+
+2. Obat oles
+Pemberian obat oles bertujuan untuk meredakan gatal dan peradangan, mengurangi gejala kulit bersisik, dan menghambat pembentukan sel kulit baru. Obat oles berupa krim atau salep yang dapat diresepkan oleh dokter untuk mengobati psoriasis yaitu calcipotriol; kortikosteroid, seperti clobetasol, betamethasone, desoximetasone, atau desonide, dithranol, fluprednidene, dan tacrolimus.
+
+3. Fototerapi
+Fototerapi atau terapi cahaya dilakukan jika psoriasis tidak dapat ditangani dengan obat oles. Prosedur ini dilakukan oleh dokter kulit menggunakan sinar ultraviolet (UV) UVA atau UVB.
+
+Jika menggunakan UVA, terapi cahaya akan dikombinasikan dengan obat jenis psoralen. Tujuannya adalah agar kulit lebih sensitif terhadap efek sinar UV.
+
+4. Obat minum
+Pengobatan lain untuk psoriasis yang bisa diberikan oleh dokter adalah obat minum. Beberapa jenis obat yang digunakan adalah methotrexate dan ciclosporin.
+
+5. Obat suntikan
+Obat suntik bisa diberikan untuk menangani psoriasis parah yang tidak efektif diobati dengan metode di atas. Jenis obat suntik yang dapat diberikan untuk menangani psoriasis adalah etanercept, adalimumab, secukinumab, dan infliximab.
+''',
+    'rosacea': '''
+Berikut adalah beberapa jenis pengobatan yang dilakukan untuk meredakan gejala rosacea: 
+
+\u2022 Menghindari pemicu yang diketahui. Misalnya seperti sinar matahari, minuman beralkohol, dan makanan pedas. 
+\u2022 Menggunakan produk perawatan untuk kulit sensitif.
+\u2022 Mengoleskan tabir surya dengan SPF 30 atau bahkan lebih sebelum beraktivitas keluar rumah.
+\u2022 Menjaga kondisi mata agar kelopak mata selalu bersih.
+\u2022 Penggunaan antibiotik. Contohnya seperti doksisiklin atau minosiklin. Meski begitu, tidak jelas bagaimana antibiotik mengurangi keparahan ruam. Umumnya antibiotik hanya mulai bekerja setelah tiga sampai empat minggu dan membutuhkan waktu enam minggu untuk benar-benar menyembuhkannya. 
+\u2022 Penggunaan krim dan gel yang mengandung antibiotik, seperti metronidazol, untuk dioleskan ke kulit
+\u2022 Prosedur terapi laser bertujuan untuk mengurangi kemerahan akibat pembesaran pembuluh darah. 
+''',
+    'strechmark': '''
+Secara medis, ada beberapa cara untuk mengatasi stretch mark yang bisa dicoba remaja, antara lain:
+
+\u2022 Krim retinoid. Pengobatan ini dapat membantu membangun kembali kolagen di kulit, yang dapat membuat jaringan parut tampak lebih seperti kulit yang tidak rusak dan memperbaiki tampilan stretch mark.
+\u2022 Terapi cahaya dan laser. Metode pengobatan ini bekerja dengan cara membantu merangsang pertumbuhan kolagen atau elastin di kulit.
+\u2022 Mikrodermabrasi. Ini adalah perangkat genggam yang meniupkan kristal ke dalam kulit, menghaluskan lapisan kulit sehingga tampak seperti normal kembali.
+Jika kamu atau anak remajamu memiliki masalah stretch mark dan ingin menghilangkannya, cobalah untuk buat janji dengan dokter spesialis kulit di rumah sakit. Lalu, bicarakan lebih lanjut pada dokter seputar metode pengobatan yang paling sesuai.
+
+
+''',
+  };
 
   Disease({required prediction}) {
     _label = prediction['label'].toString().split(' ')[1];
     _description = _descriptionList[_label].toString();
     _imagePath = _imageList[_label].toString();
     _symptom = _symptomList[_label].toString();
+    _treatment = _treatmentList[_label].toString();
   }
-
-  // static String getLabel({required prediction}) {
-  //   return prediction['label'].toString().split(' ')[1];
-  // }
 
   // GETTER LABEL
   String getLabel() => _label;
 
   // GETTER IMAGE
   String getImagePath() => _imagePath;
+
+  // GETTER SYMPTOM
   String getSymptom() => _symptom;
+
+  // GETTER TREATMENT
+  String getTreatment() => _treatment;
 
   // GETTER DESCRIPTION
   String getFullDesc() => _description;
