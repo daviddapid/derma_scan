@@ -40,6 +40,7 @@ dependencies:
   image_cropper: ^5.0.0
   flutter_tflite: ^1.0.1
   card_swiper: ^3.0.1
+  url_launcher: ^6.1.14
 
 dev_dependencies:
   flutter_test:

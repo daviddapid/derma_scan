@@ -18,7 +18,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      title: 'Derma Scan',
       // theme: Theme.of(context).copyWith(
       //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightBlue),
       //   useMaterial3: true,
@@ -54,7 +55,7 @@ class MyHomePage extends StatelessWidget {
               // INPUT FILE PICKER
               // -----------------
               InkWell(
-                onTap: () async {
+                onTap: () {
                   Get.bottomSheet(
                     BottomSheetImagePicker(),
                   );

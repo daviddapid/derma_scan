@@ -2,6 +2,7 @@ import 'package:derma_scan/detail.dart';
 import 'package:derma_scan/utils/Disease.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class CardPrediction extends StatelessWidget {
   CardPrediction({
@@ -49,7 +50,12 @@ class CardPrediction extends StatelessWidget {
                         // TextButton(onPressed: () {}, child: Text('lihat browser')),
                         // TextButton(onPressed: () {}, child: Text('lihat detail'))
                         TextButton.icon(
-                          onPressed: () {},
+                          onPressed: () async {
+                            final Uri url = Uri.parse('https://www.google.com/search?q=${_disease.getLabel()}');
+                            if (!await launchUrl(url)) {
+                              Get.snackbar("error", 'Could not launch $url');
+                            }
+                          },
                           label: Text('lihat browser'),
                           icon: Icon(Icons.search, size: 15),
                         ),

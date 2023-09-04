@@ -51,5 +51,10 @@
 	<string>to take photo from camera</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>to take audio for image_picker</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>sms</string>
+		<string>tel</string>
+	</array>
 </dict>
 </plist>
